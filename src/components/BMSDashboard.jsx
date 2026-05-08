@@ -154,7 +154,7 @@ function MilestoneCards() {
               <div style={{ fontWeight: 800, fontSize: 15, marginBottom: 2, color: '#111' }}>{ev.name}</div>
               <div style={{ fontSize: 12, color: '#666', marginBottom: 10 }}>{ev.format} &middot; {formatDate(ev.date)}</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                {(ev.watchPoints || ev.agenda || []).slice(0, 3).map((item, i) => (
+                {(ev.agenda || ev.watchPoints || []).slice(0, 3).map((item, i) => (
                   <div key={i} style={{ display: 'flex', gap: 6, fontSize: 12, color: '#555', lineHeight: 1.4 }}>
                     <span style={{ color: isInternal ? '#b8860b' : '#0265dc', flexShrink: 0, marginTop: 2 }}>›</span>
                     <span>{item}</span>

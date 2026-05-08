@@ -136,7 +136,7 @@ function NextStepsCards() {
             <div style={{ fontWeight: 800, fontSize: 15, marginBottom: 2, color: '#111' }}>{step.name}</div>
             <div style={{ fontSize: 12, color: '#666', marginBottom: 10 }}>Owner: {step.owner}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-              {step.watchPoints.slice(0, 3).map((item, i) => (
+              {[step.description].filter(Boolean).map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: 6, fontSize: 12, color: '#555', lineHeight: 1.4 }}>
                   <span style={{ color: '#0265dc', flexShrink: 0, marginTop: 2 }}>›</span>
                   <span>{item}</span>
