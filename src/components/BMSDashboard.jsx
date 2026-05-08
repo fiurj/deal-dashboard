@@ -108,20 +108,24 @@ function Header() {
 function StatCards() {
   const nextEvent = bms.events.find(e => daysUntil(e.date) >= 0);
   const nextDays = nextEvent ? daysUntil(nextEvent.date) : null;
+  const clientFacing = bms.events.filter(e => e.type !== 'Internal').length;
+  const internal = bms.events.filter(e => e.type === 'Internal').length;
+  const cards = [
+    { label: 'Total Pipeline', value: `${bms.pipeline.totalLow}–${bms.pipeline.totalHigh}`, sub: `${bms.pipeline.areaCount} opportunity areas` },
+    { label: 'Current Footprint', value: bms.pipeline.footprint, sub: 'DX + Creative + Document Cloud' },
+    { label: 'Stage', value: `Stage ${bms.status.stage}`, sub: `TPS shows Stage ${bms.status.stageTps} — Trzaska/Anne confirmed 3` },
+    { label: "Jonathan's June 2 Role", value: 'Scene 4 + Lab B', sub: 'RT-CDP / AJO / Activation' },
+    { label: 'Next Event', value: nextDays !== null ? `${nextDays}d` : '—', sub: nextEvent ? nextEvent.name : '' },
+    { label: 'Touchpoints', value: String(bms.events.length), subEl: <span><span style={{ color: '#12805c', fontWeight: 700 }}>● {clientFacing} client-facing</span>{'  '}<span style={{ color: '#6e6e6e' }}>● {internal} internal</span></span> },
+  ];
   return (
     <div style={{ background: '#e8e8e8', borderBottom: '2px solid #ccc', padding: '20px 40px' }}>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 14, maxWidth: 1200, margin: '0 auto' }}>
-        {[
-          { label: 'Total Pipeline', value: `${bms.pipeline.totalLow}–${bms.pipeline.totalHigh}`, sub: `${bms.pipeline.areaCount} opportunity areas` },
-          { label: 'Current Footprint', value: bms.pipeline.footprint, sub: 'DX + Creative + Document Cloud' },
-          { label: 'Stage', value: `Stage ${bms.status.stage}`, sub: `TPS shows Stage ${bms.status.stageTps} — Trzaska/Anne confirmed 3` },
-          { label: "Jonathan's June 2 Role", value: 'Scene 4 + Lab B', sub: 'RT-CDP / AJO / Activation' },
-          { label: 'Next Event', value: nextDays !== null ? `${nextDays}d` : '—', sub: nextEvent ? nextEvent.name : '' },
-        ].map(({ label, value, sub }) => (
+        {cards.map(({ label, value, sub, subEl }) => (
           <div key={label} style={{ background: '#fff', border: '1px solid #bbb', borderRadius: 8, padding: '14px 18px', boxShadow: '0 2px 6px rgba(0,0,0,0.08)' }}>
             <div style={{ fontSize: 11, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#555', marginBottom: 6 }}>{label}</div>
             <div style={{ fontSize: 22, fontWeight: 800, color: '#0265dc', marginBottom: 3 }}>{value}</div>
-            <div style={{ fontSize: 12, color: '#666', lineHeight: 1.4 }}>{sub}</div>
+            <div style={{ fontSize: 12, color: '#666', lineHeight: 1.4 }}>{subEl || sub}</div>
           </div>
         ))}
       </div>
