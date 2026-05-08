@@ -16,7 +16,7 @@ export const bcbssc = {
     td: 'Jonathan Fiur',
     priorTd: 'Todd Ruhl',
     ad: 'Todd Browndyke',
-    isc: 'Carmine Sirico',
+    pe: 'Carmine Sirico',
     execSponsor: 'Jeff Pope',
     techRisk: 'Medium',
     techRiskNote: 'Product/Feature risk. Warm restart — prior engagement stalled at Tripp reset. Use case mapping in flight, Reggie Miller thread now active.',
@@ -147,7 +147,7 @@ export const bcbssc = {
     adobe: [
       { name: 'Jonathan Fiur', title: 'Principal Solutions Consultant', role: 'TD (from Todd Ruhl, May 2026) — AEP, AJO, CJA, agentic' },
       { name: 'Todd Browndyke', title: 'Account Director', role: 'AD — owns account; owns Karen Bennett relationship; orchestrating customer engagement' },
-      { name: 'Carmine Sirico', title: 'ISC / PSE', role: 'ISC — initiated April restart; building Campaign→AJO business case; Copilot workspace owner' },
+      { name: 'Carmine Sirico', title: 'P&E Product Specialist', role: 'P&E — initiated April restart; building Campaign→AJO business case; Copilot workspace owner' },
       { name: 'Jeff Pope', title: 'Adobe Exec Sponsor', role: 'Exec Sponsor' },
       { name: 'Nikita', title: 'Customer Success Manager', role: 'Ultimate Success plan; scheduling CJA AI working session with Beth Herron team' },
       { name: 'Kathy', title: 'Legal', role: 'GenAI rider restart — must be activated immediately' },

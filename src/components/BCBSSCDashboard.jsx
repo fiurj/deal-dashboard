@@ -85,7 +85,7 @@ function Header() {
             Blue Cross Blue Shield of South Carolina
           </h1>
           <div style={{ fontSize: 13, color: '#999' }}>
-            {bcbssc.type} &middot; {bcbssc.hq} &middot; {s.dr} &middot; TD: {s.td} &middot; ISC: {s.isc}
+            {bcbssc.type} &middot; {bcbssc.hq} &middot; {s.dr} &middot; TD: {s.td} &middot; P&amp;E: {s.pe}
           </div>
         </div>
         <div style={{ textAlign: 'right', fontSize: 12, color: '#666' }}>
