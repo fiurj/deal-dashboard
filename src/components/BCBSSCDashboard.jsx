@@ -3,14 +3,19 @@ import { bcbssc } from '../data/bcbssc.js';
 
 // --- Utilities ---
 
+function parseLocal(dateStr) {
+  const [y, m, d] = dateStr.split('-').map(Number);
+  return new Date(y, m - 1, d);
+}
+
 function daysUntil(dateStr) {
-  const today = new Date('2026-05-08');
-  const target = new Date(dateStr);
+  const today = parseLocal('2026-05-08');
+  const target = parseLocal(dateStr);
   return Math.round((target - today) / (1000 * 60 * 60 * 24));
 }
 
 function formatDate(dateStr) {
-  return new Date(dateStr).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  return parseLocal(dateStr).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 }
 
 const dispositionColor = {
